@@ -275,10 +275,10 @@ base-services:
     - [ neutron-api, neutron-hacluster ]
     - [ heat, heat-hacluster ]
     - [ vault, vault-hacluster ]
-  - - etcd:certificates
-    - easyrsa:client
-  - - etcd:db
-    - vault:etcd
+    - - etcd:certificates
+      - easyrsa:client
+    - - etcd:db
+      - vault:etcd
 ceilometer-mongodb:
   services:
     ceilometer:
