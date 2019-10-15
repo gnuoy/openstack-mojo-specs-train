@@ -197,6 +197,14 @@ base-services:
       options:
         corosync_transport: unicast
         cluster_count: 3
+    easyrsa:
+      charm: cs:~containers/easyrsa
+      num_units: 1
+    etcd:
+      charm: cs:etcd
+      num_units: 3
+      options:
+        channel: 3.1/stable
   relations:
     - [ keystone, mysql ]
     - [ "nova-cloud-controller:shared-db", mysql ]
@@ -267,6 +275,10 @@ base-services:
     - [ neutron-api, neutron-hacluster ]
     - [ heat, heat-hacluster ]
     - [ vault, vault-hacluster ]
+  - - etcd:certificates
+    - easyrsa:client
+  - - etcd:db
+    - vault:etcd
 ceilometer-mongodb:
   services:
     ceilometer:
