@@ -419,8 +419,6 @@ openstack-services-trusty-mitaka:
     - [ designate, designate-hacluster ]
     # designate <-> nova-compute needed for legacy notifications
     - [ keystone, tempest ]
-    - - designate:certificates
-      - vault:certificates
     - - aodh:certificates
       - vault:certificates
 openstack-services-xenial-ocata:
@@ -446,6 +444,8 @@ openstack-services-xenial-queens:
   relations:
     - - ceilometer
       - keystone:identity-credentials
+    - - designate:certificates
+      - vault:certificates
 openstack-services-bionic-rocky:
   inherits: openstack-services-xenial-queens
   services:
