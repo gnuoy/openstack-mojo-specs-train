@@ -25,7 +25,7 @@ tempest                cs:~openstack-charmers-next/tempest
 gnocchi                cs:~openstack-charmers-next/gnocchi
 barbican               cs:~openstack-charmers-next/barbican
 designate-bind         cs:~openstack-charmers-next/designate-bind
-designate              cs:~gnuoy/designate-34;channel=unpublished
+designate              cs:~openstack-charmers-next/designate
 memcached              cs:~memcached-team/memcached
 quagga                 cs:~openstack-charmers-next/quagga
 neutron-dynamic-routing  cs:~openstack-charmers-next/neutron-dynamic-routing
