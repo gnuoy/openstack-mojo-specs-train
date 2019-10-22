@@ -421,6 +421,8 @@ openstack-services-trusty-mitaka:
     - [ keystone, tempest ]
     - - aodh:certificates
       - vault:certificates
+    - - designate:certificates
+      - vault:certificates
 openstack-services-xenial-ocata:
   inherits: openstack-services-trusty-mitaka
   services:
@@ -444,8 +446,6 @@ openstack-services-xenial-queens:
   relations:
     - - ceilometer
       - keystone:identity-credentials
-    - - designate:certificates
-      - vault:certificates
 openstack-services-bionic-rocky:
   inherits: openstack-services-xenial-queens
   services:
