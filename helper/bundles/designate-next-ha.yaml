@@ -619,6 +619,11 @@ bionic-train:
       num_units: 3
       options:
         vip: "{{ MOJO_OS_VIP15 }}"
+    placement-hacluster:
+      charm: hacluster
+      options:
+        corosync_transport: unicast
+        cluster_count: 3
   overrides:
     openstack-origin: cloud:bionic-train
     source: cloud:bionic-train
@@ -627,3 +632,4 @@ bionic-train:
     - [ placement, mysql ]
     - [ placement, keystone ]
     - [ placement, vault ]
+    - [ placement, placement-hacluster ]
