@@ -616,6 +616,9 @@ bionic-train:
     placement:
       charm: placement
       constraints: mem=1G
+      num_units: 3
+      options:
+        vip: "{{ MOJO_OS_VIP15 }}"
   overrides:
     openstack-origin: cloud:bionic-train
     source: cloud:bionic-train
