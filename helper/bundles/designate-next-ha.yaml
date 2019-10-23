@@ -308,6 +308,8 @@ ceilometer-mongodb:
     - [ ceilometer-agent, ceilometer ]
     - [ "ceilometer-agent:amqp", rabbitmq-server ]
     - [ ceilometer, ceilometer-hacluster ]
+    - - ceilometer:certificates
+      - vault:certificates
 charm-ceilometer-gnocchi:
   services:
     ceilometer:
